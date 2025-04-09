@@ -1,70 +1,185 @@
-# Getting Started with Create React App
+# TaskMaster - Smart Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![TaskMaster Logo](public/icons/icon-192x192.png)
 
-## Available Scripts
+TaskMaster is an AI-powered task management application that helps you organize, prioritize, and complete your tasks more efficiently. With smart suggestions and intuitive design, TaskMaster makes task management simple and effective.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- **AI-Powered Suggestions**: Get smart recommendations for task categorization, priority, and due dates
+- **Intuitive Dashboard**: View your tasks at a glance with a clean, organized dashboard
+- **Task Categories**: Organize tasks by work, personal, development, health, and finance
+- **Priority Levels**: Assign low, medium, high, or urgent priority to tasks
+- **Calendar View**: Visualize your tasks in a calendar format
+- **Analytics**: Track your productivity with detailed analytics and insights
+- **Mobile Responsive**: Works seamlessly on desktop and mobile devices
+- **Dark Mode**: Toggle between light and dark themes
+- **PWA Support**: Install as a Progressive Web App for offline access
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Next.js**: React framework for server-rendered applications
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **shadcn/ui**: Reusable UI components
+- **React Hook Form**: Form validation
+- **date-fns**: Date utility library
+- **Lucide React**: Icon library
+- **Local Storage**: For data persistence (can be replaced with a backend)
 
-### `npm test`
+## 📋 Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 18.0.0 or later
+- npm or yarn
 
-### `npm run build`
+## 🔧 Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   \`\`\`bash
+   git clone https://github.com/yourusername/taskmaster.git
+   cd taskmaster
+   \`\`\`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   \`\`\`bash
+   npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   # or
 
-### `npm run eject`
+   yarn install
+   \`\`\`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Run the development server:
+   \`\`\`bash
+   npm run dev
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   # or
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   yarn dev
+   \`\`\`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## Learn More
+## 🏗️ Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+\`\`\`
+taskmaster/
+├── app/ # Next.js app directory
+│ ├── (app)/ # App routes (dashboard, today, calendar, etc.)
+│ ├── (auth)/ # Authentication routes (login, register)
+│ ├── (marketing)/ # Marketing pages (landing page)
+│ ├── globals.css # Global styles
+│ └── layout.tsx # Root layout
+├── components/ # React components
+│ ├── ui/ # UI components (shadcn/ui)
+│ ├── dashboard.tsx # Dashboard component
+│ ├── task-item.tsx # Task item component
+│ └── ... # Other components
+├── hooks/ # Custom React hooks
+│ ├── use-tasks.tsx # Tasks context and hook
+│ └── use-mobile.tsx # Mobile detection hook
+├── lib/ # Utility functions
+│ ├── ai-service.ts # AI suggestion service
+│ ├── routes.ts # Route definitions
+│ └── utils.ts # Utility functions
+├── public/ # Static assets
+│ ├── icons/ # App icons
+│ └── images/ # Images
+└── types/ # TypeScript type definitions
+\`\`\`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📱 Features Overview
 
-### Code Splitting
+### Dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The dashboard provides an overview of your tasks, including:
 
-### Analyzing the Bundle Size
+- Today's tasks
+- Completion rate
+- Overdue tasks
+- Pending, upcoming, and completed tasks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Task Management
 
-### Making a Progressive Web App
+- Create, edit, and delete tasks
+- Mark tasks as complete
+- Set due dates, categories, and priority levels
+- Get AI suggestions for task categorization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Calendar View
 
-### Advanced Configuration
+- View tasks in a calendar format
+- See tasks for specific dates
+- Plan your schedule visually
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Analytics
 
-### Deployment
+- Track your productivity
+- View completion rates
+- Analyze task distribution by category and priority
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Categories
 
-### `npm run build` fails to minify
+- Organize tasks by category
+- Filter tasks by work, personal, development, health, and finance
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔒 Authentication
+
+TaskMaster includes a simulated authentication system for demo purposes. In a production environment, you would replace this with a real authentication system.
+
+Demo credentials:
+
+- Email: demo@example.com
+- Password: password
+
+## 🌐 Progressive Web App
+
+TaskMaster is configured as a Progressive Web App (PWA), which means you can install it on your device and use it offline. To install:
+
+1. Open the application in a supported browser (Chrome, Edge, etc.)
+2. Look for the install prompt in the address bar or menu
+3. Follow the instructions to install
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📸 Screenshots
+
+### Dashboard
+
+![Dashboard](public/screenshots/dashboard.png)
+
+### Calendar View
+
+![Calendar](public/screenshots/calendar.png)
+
+### Analytics
+
+![Analytics](public/screenshots/analytics.png)
+
+### Task Creation with AI Suggestions
+
+![Task Creation](public/screenshots/task-creation.png)
+
+## 🙏 Acknowledgements
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [date-fns](https://date-fns.org/)
+
+---
+
+Built with ❤️ by BurhanKashif
