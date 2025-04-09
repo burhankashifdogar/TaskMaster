@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Changed primary color to a vibrant purple */
+    --primary: 265 89% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Adjusted secondary color for better contrast */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    /* Enhanced accent color */
+    --accent: 265 89% 97%;
+    --accent-foreground: 265 89% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 265 89% 60%;
+    --radius: 0.75rem;
+
+    /* Sidebar variables */
+    --sidebar-width: 16rem;
+    --sidebar-width-icon: 3rem;
+    --sidebar-background: 265 89% 97%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 265 89% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 265 89% 94%;
+    --sidebar-accent-foreground: 265 89% 40%;
+    --sidebar-border: 265 89% 90%;
+    --sidebar-ring: 265 89% 60%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Adjusted dark mode primary */
+    --primary: 265 89% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    /* Enhanced dark mode accent */
+    --accent: 265 89% 20%;
+    --accent-foreground: 265 89% 80%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 265 89% 70%;
+
+    /* Sidebar variables for dark mode */
+    --sidebar-background: 265 89% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 265 89% 70%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 265 89% 20%;
+    --sidebar-accent-foreground: 265 89% 80%;
+    --sidebar-border: 265 89% 20%;
+    --sidebar-ring: 265 89% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Ensure containers are properly centered */
+  .container {
+    @apply mx-auto px-4 md:px-6;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1536px;
+    }
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom styles for task cards */
+.task-card {
+  transition: all 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Priority indicators */
+.priority-dot {
+  @apply w-2 h-2 rounded-full inline-block;
+}
+
+.priority-low {
+  @apply bg-blue-500;
+}
+
+.priority-medium {
+  @apply bg-yellow-500;
+}
+
+.priority-high {
+  @apply bg-orange-500;
+}
+
+.priority-urgent {
+  @apply bg-red-500;
+}
+
+/* Category badges */
+.category-badge {
+  @apply text-xs font-medium px-2 py-1 rounded-full;
+}
+
+.category-work {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300;
+}
+
+.category-personal {
+  @apply bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300;
+}
+
+.category-dev {
+  @apply bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300;
+}
+
+.category-health {
+  @apply bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300;
+}
+
+.category-finance {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300;
+}
+
+/* Gradient backgrounds for stats cards */
+.stats-card-today {
+  @apply bg-gradient-to-br from-purple-50/80 to-blue-50/80 border-purple-100/80 dark:from-purple-950/20 dark:to-blue-950/20 dark:border-purple-900/50;
+}
+
+.stats-card-completion {
+  @apply bg-gradient-to-br from-green-50/80 to-emerald-50/80 border-green-100/80 dark:from-green-950/20 dark:to-emerald-950/20 dark:border-green-900/50;
+}
+
+.stats-card-overdue {
+  @apply bg-gradient-to-br from-red-50/80 to-orange-50/80 border-red-100/80 dark:from-red-950/20 dark:to-orange-950/20 dark:border-red-900/50;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Safe area padding for mobile devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Consistent page layout */
+.page-container {
+  @apply container mx-auto px-4 md:px-6 py-4 md:py-6 space-y-6 pb-20 md:pb-6;
+}
+
+/* Dark mode improvements */
+.dark .task-card {
+  @apply border-border hover:bg-accent/20;
+}
+
+.dark .task-card.overdue {
+  @apply border-red-800/50 bg-red-950/20;
+}
+
+/* Improve stats cards for better alignment */
+.stats-card-today,
+.stats-card-completion,
+.stats-card-overdue {
+  @apply h-full transition-all duration-200 hover:shadow-md;
+}
+
+/* Ensure consistent card heights */
+.card-equal-height {
+  @apply h-full flex flex-col;
+}
+
+.card-equal-height .card-content {
+  @apply flex-1;
+}
+
+/* Improve task grid layout */
+.task-grid {
+  @apply grid gap-4;
+}
+
+/* Ensure consistent spacing in tabs */
+.tabs-container {
+  @apply w-full space-y-4;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .page-container {
+    @apply px-3 py-3 space-y-4;
+  }
+
+  .stats-grid {
+    @apply grid-cols-1 gap-3;
+    @apply gap-3;
+  }
+
+  .task-grid {
+    @apply space-y-3;
+    @apply gap-3;
+  }
+}
